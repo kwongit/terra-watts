@@ -100,7 +100,6 @@ input, select, textarea {
 
 	body {
 		background-color: #C7B7B4;
-		/* background-image: url('../../images/world.png'); */
 		background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../../images/world.png');
 		background-size: auto,
  cover;
@@ -126,7 +125,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #ffffff;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-family: "Inter", "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: 300;
 		line-height: 1.65;
@@ -191,7 +190,7 @@ input, select, textarea {
 			text-decoration: none;
 			border-bottom: 0;
 			display: block;
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: "Inter", Raleway, Helvetica, sans-serif;
 			font-size: 0.8em;
 			font-weight: 700;
 			letter-spacing: 0.1em;
@@ -208,7 +207,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: "Inter", 'Font Awesome 5 Free';
 				font-weight: 900;
 			}
 
@@ -254,7 +253,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
-		font-family: Raleway, Helvetica, sans-serif;
+		font-family: "Inter", Raleway, Helvetica, sans-serif;
 		font-weight: 700;
 		letter-spacing: 0.1em;
 		margin: 0 0 1em 0;
@@ -331,7 +330,7 @@ input, select, textarea {
 		background: rgba(255, 255, 255, 0.025);
 		border-radius: 5px;
 		border: solid 2px rgba(255, 255, 255, 0.125);
-		font-family: "Courier New", monospace;
+		font-family: "Inter", "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -339,7 +338,7 @@ input, select, textarea {
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: "Inter", "Courier New", monospace;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -2169,7 +2168,7 @@ input, select, textarea {
 	label {
 		color: #ffffff;
 		display: block;
-		font-family: Raleway, Helvetica, sans-serif;
+		font-family: "Inter", Raleway, Helvetica, sans-serif;
 		font-size: 0.8em;
 		font-weight: 700;
 		letter-spacing: 0.1em;
@@ -2272,7 +2271,7 @@ input, select, textarea {
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
-			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-family: "Inter", "Source Sans Pro", Helvetica, sans-serif;
 			text-transform: none;
 			letter-spacing: 0;
 			font-weight: 300;
@@ -2291,7 +2290,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: "Inter", 'Font Awesome 5 Free';
 				font-weight: 900;
 			}
 
@@ -2391,7 +2390,7 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
+			font-family: "Inter", 'Font Awesome 5 Free';
 			font-weight: 400;
 		}
 
@@ -2408,7 +2407,7 @@ input, select, textarea {
 		}
 
 		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
+			font-family: "Inter", 'Font Awesome 5 Brands';
 		}
 
 /* Image */
@@ -2682,7 +2681,7 @@ input, select, textarea {
 				text-rendering: auto;
 				line-height: 1;
 				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
+				font-family: "Inter", 'Font Awesome 5 Free';
 				font-weight: 400;
 			}
 
@@ -2872,7 +2871,7 @@ input, select, textarea {
 		color: #ffffff !important;
 		cursor: pointer;
 		display: inline-block;
-		font-family: Raleway, Helvetica, sans-serif;
+		font-family: "Inter", Raleway, Helvetica, sans-serif;
 		font-size: 0.8em;
 		font-weight: 700;
 		height: 3.75em;
@@ -3109,7 +3108,7 @@ input, select, textarea {
 			}
 
 		#header nav {
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: "Inter", Raleway, Helvetica, sans-serif;
 			font-size: 0.8em;
 			font-weight: 700;
 			height: 3em;
@@ -3152,7 +3151,7 @@ input, select, textarea {
 						text-rendering: auto;
 						line-height: 1;
 						text-transform: none !important;
-						font-family: 'Font Awesome 5 Free';
+						font-family: "Inter", 'Font Awesome 5 Free';
 						font-weight: 900;
 					}
 
@@ -3332,7 +3331,7 @@ input, select, textarea {
 					border-radius: 5px;
 					border: 0;
 					display: block;
-					font-family: Raleway, Helvetica, sans-serif;
+					font-family: "Inter", Raleway, Helvetica, sans-serif;
 					font-size: 0.8em;
 					font-weight: 200;
 					letter-spacing: 0.1em;
@@ -3493,12 +3492,24 @@ input, select, textarea {
 		}
 
 		#wrapper > header p {
-			font-family: Raleway, Helvetica, sans-serif;
+			font-family: "Inter", Raleway, Helvetica, sans-serif;
 			font-size: 1em;
 			font-weight: 200;
 			letter-spacing: 0.1em;
 			line-height: 2;
 			text-transform: uppercase;
+		}
+
+		/* Target h2 and p elements within sections one, two, and three */
+		#one h2,
+		#one p,
+		#two h2,
+		#two p,
+		#three h2,
+		#three p,
+		#five h2,
+		#five p {
+			color: #3A3E44;
 		}
 
 	@media screen and (max-width: 1280px) {
@@ -3554,7 +3565,8 @@ input, select, textarea {
 
 	.wrapper {
 		background-color: #2e3141;
-		margin: 6.5em 0;
+		/* margin: 6.5em 0; */
+		/* Removes world image from background */
 		position: relative;
 	}
 
@@ -3797,6 +3809,7 @@ input, select, textarea {
 
 			.wrapper.alt.style5 {
 				background-color: #C5C8DA;
+				/* background-image: url("../../images/rocks.jpeg"); */
 			}
 
 			.wrapper.spotlight.style4 {
@@ -3850,7 +3863,8 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			.wrapper {
-				margin: 4.75em 0;
+				/* margin: 4.75em 0; */
+				/* Removes world image from background */
 			}
 
 				.wrapper:before, .wrapper:after {
@@ -3885,7 +3899,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			.wrapper {
-				margin: 2.5em 0;
+				/* margin: 2.5em 0; */
+				/* Removes world image from background */
 			}
 
 				.wrapper:before, .wrapper:after {
@@ -3944,6 +3959,10 @@ input, select, textarea {
 			}
 
 		}
+
+		/* #five img {
+			max-width: 100%;
+		} */
 
 /* Footer */
 	#footer {
