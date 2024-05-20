@@ -3713,9 +3713,9 @@ input, select, textarea {
 
 			.wrapper.spotlight.style1 {
 				/* background-image: url("../../images/mountains.jpeg"); */
-				background: linear-gradient(to right, #6E794F 50%, rgba(0, 0, 0, 0) 50%), url('../../images/mountains.jpeg');
+				/* background: linear-gradient(to right, #6E794F 50%, rgba(0, 0, 0, 0) 50%), url('../../images/mountains.jpeg'); */
 				/* background-repeat: round; */
-				background-position: center;
+				/* background-position: center; */
 			}
 
 			.wrapper.spotlight:before, .wrapper.spotlight:after {
@@ -3797,9 +3797,9 @@ input, select, textarea {
 
 			.wrapper.spotlight.style3 {
 				/* background-image: url("../../images/mountains.jpeg"); */
-					background: linear-gradient(to left, #6E794F 50%, rgba(0, 0, 0, 0) 50%), url('../../images/mountains.jpeg');
+					/* background: linear-gradient(to left, #6E794F 50%, rgba(0, 0, 0, 0) 50%), url('../../images/mountains.jpeg'); */
 					/* background-repeat: round; */
-					background-position: center;
+					/* background-position: center; */
 			}
 
 				.wrapper.spotlight.style3:before, .wrapper.spotlight.style3:after {
@@ -4009,6 +4009,7 @@ input, select, textarea {
 
 		#footer .inner .contact {
 			width: calc(50% - 1.5em);
+			/* display: block; */
 		}
 
 		#footer .inner .copyright {
