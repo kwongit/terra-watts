@@ -54,6 +54,7 @@
 	border: 0;
 	display: inline-block;
 	padding: 0 1em;
+	color: white;
 }
 
 #header nav a:before {
@@ -5009,6 +5010,9 @@ input, select, textarea {
 
 	#one {
 		background-color: #C7B7B4;
+		background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../../images/world.png');
+		background-position: center;
+		background-size: cover;
 	}
 
 	#two, #four {
