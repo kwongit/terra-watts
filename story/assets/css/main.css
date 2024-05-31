@@ -3629,7 +3629,7 @@ input, select, textarea {
 	}
 
 		.banner.style1 .content {
-			padding: 7rem 7rem 5rem 7rem ;
+			/* padding: 7rem 7rem 5rem 7rem ; */
 			-moz-align-self: center;
 			-webkit-align-self: center;
 			-ms-align-self: center;
@@ -3746,7 +3746,7 @@ input, select, textarea {
 		}
 
 		.banner.style1.fullscreen {
-			min-height: 100vh;
+			/* min-height: 100vh; */
 		}
 
 			@media screen and (orientation: portrait) {
@@ -5029,6 +5029,12 @@ input, select, textarea {
 
 	#seven, #eight {
 		background-color: #3A3E44
+	}
+
+	.partnership-logo {
+		width: 75%;
+		height: auto;
+		opacity: 0.5;
 	}
 
 /* Spotlight (style1) */
@@ -6981,7 +6987,7 @@ input, select, textarea {
 				}
 
 		.gallery.style2 > .forward, .gallery.style2 > .backward {
-			text-decoration: none;
+			/* text-decoration: none;
 			-moz-transition: opacity 0.2s ease-in-out;
 			-webkit-transition: opacity 0.2s ease-in-out;
 			-ms-transition: opacity 0.2s ease-in-out;
@@ -6992,7 +6998,7 @@ input, select, textarea {
 			height: 100%;
 			cursor: pointer;
 			opacity: 0;
-			z-index: 2;
+			z-index: 2; */
 		}
 
 			.gallery.style2 > .forward:before, .gallery.style2 > .backward:before {
@@ -7024,31 +7030,33 @@ input, select, textarea {
 		}
 
 		.gallery.style2 > .forward {
-			right: 0;
-			background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0));
+			/* right: 0;
+			background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0)); */
 		}
 
 			.gallery.style2 > .forward:before {
-				content: '\f105';
-				right: 0;
+				/* content: '\f105';
+				right: 0; */
 			}
 
 		.gallery.style2 > .backward {
-			left: 0;
-			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0));
+			/* left: 0;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0.25) 15%, rgba(0, 0, 0, 0)); */
 		}
 
 			.gallery.style2 > .backward:before {
-				content: '\f104';
-				left: 0;
+				/* content: '\f104';
+				left: 0; */
 			}
 
 		.gallery.style2 > .inner {
 			display: inherit;
+			justify-content: center;
 			overflow-x: auto;
 			overflow-y: hidden;
 			position: relative;
 			width: 100%;
+			padding-bottom: 3.5rem;
 		}
 
 		.gallery.style2 article {
