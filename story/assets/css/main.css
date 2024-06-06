@@ -3631,7 +3631,7 @@ input, select, textarea {
 
 		.banner.style1 .content {
 			/* padding: 7rem 7rem 5rem 7rem ; */
-			padding-bottom: 5rem;
+			padding: 0rem 7rem 5rem 7rem ;
 			-moz-align-self: center;
 			-webkit-align-self: center;
 			-ms-align-self: center;
@@ -3684,9 +3684,7 @@ input, select, textarea {
 
 			.banner.style1 .content {
 				/* padding: 5rem 5rem 3rem 5rem ; */
-				/* padding: 0rem 2rem 0.5rem 2rem; */
-				/* padding: 0rem 2rem 5rem 2rem; */
-				padding-bottom: 5rem;
+				padding: 0rem 5rem 3rem 5rem ;
 			}
 
 		}
@@ -3695,9 +3693,7 @@ input, select, textarea {
 
 			.banner.style1 .content {
 				/* padding: 4rem 4rem 2rem 4rem ; */
-				/* padding: 0rem 2rem 0.5rem 2rem; */
-				/* padding: 0rem 2rem 5rem 2rem; */
-				padding-bottom: 5rem;
+				padding: 0rem 4rem 2rem 4rem ;
 			}
 
 		}
@@ -3706,9 +3702,7 @@ input, select, textarea {
 
 			.banner.style1 .content {
 				/* padding: 3.75rem 3rem 1.75rem 3rem ; */
-				/* padding: 0rem 2rem 0.5rem 2rem; */
-				/* padding: 0rem 2rem 5rem 2rem; */
-				padding-bottom: 5rem;
+				padding: 0rem 3rem 1.75rem 3rem ;
 			}
 
 		}
@@ -3717,9 +3711,7 @@ input, select, textarea {
 
 			.banner.style1 .content {
 				/* padding: 2.5rem 2rem 0.5rem 2rem ; */
-				/* padding: 0rem 2rem 0.5rem 2rem ; */
-				/* padding: 0rem 2rem 5rem 2rem; */
-				padding-bottom: 5rem;
+				padding: 0rem 2rem 0.5rem 2rem ;
 			}
 
 		}
@@ -3728,9 +3720,9 @@ input, select, textarea {
 
 			.banner.style1 {
 				-moz-flex-direction: column-reverse;
-				-webkit-flex-direction: column-reverse;
+				/* -webkit-flex-direction: column-reverse; */
 				-ms-flex-direction: column-reverse;
-				flex-direction: column-reverse;
+				/* flex-direction: column-reverse; */
 				text-align: center;
 			}
 
@@ -3763,7 +3755,7 @@ input, select, textarea {
 			/* min-height: 100vh; */
 		}
 
-			@media screen and (orientation: portrait) {
+			/* @media screen and (orientation: portrait) {
 
 				.banner.style1.fullscreen .content {
 					min-height: 50vh;
@@ -3773,7 +3765,7 @@ input, select, textarea {
 					height: 50vh;
 				}
 
-			}
+			} */
 
 		.banner.style1.orient-right {
 			-moz-flex-direction: row-reverse;
