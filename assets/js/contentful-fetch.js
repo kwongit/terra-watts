@@ -1,6 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // const contentful = require("contentful");
-
+// Wait for the window to load completely before executing the script
+window.addEventListener("load", function () {
   // Initialize Contentful client directly
   const client = contentful.createClient({
     space: "a5vqb0h4v6pt",
