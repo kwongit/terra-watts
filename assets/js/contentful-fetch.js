@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const contentful = require("contentful");
+  // const contentful = require("contentful");
 
   // Initialize Contentful client
   const client = contentful.createClient({
