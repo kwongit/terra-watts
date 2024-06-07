@@ -1,5 +1,3 @@
-const contentful = require("contentful");
-
 // Initialize Contentful client directly
 const client = contentful.createClient({
   space: "a5vqb0h4v6pt",
