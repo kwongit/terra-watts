@@ -11,5 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "contentful": "^10.11.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwongit/terra-watts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kwongit/terra-watts/issues"
+  },
+  "homepage": "https://github.com/kwongit/terra-watts#readme"
 }
