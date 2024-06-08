@@ -1,6 +1,6 @@
 // import { createClient } from "https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js";
 
-const client = createClient({
+const client = contentful.createClient({
   // space: process.env.CONTENTFUL_SPACE_ID,
   // accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   space: window.env.CONTENTFUL_SPACE_ID,
