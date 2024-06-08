@@ -1,12 +1,7 @@
-// import { createClient } from "https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js";
-import * as contentful from "contentful";
-
 document.addEventListener("DOMContentLoaded", () => {
   const client = contentful.createClient({
-    // space: process.env.CONTENTFUL_SPACE_ID,
-    // accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    space: window.env.CONTENTFUL_SPACE_ID,
-    accessToken: window.env.CONTENTFUL_ACCESS_TOKEN,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
   client
