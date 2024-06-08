@@ -1,4 +1,4 @@
-import { createClient } from "https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js";
+// import { createClient } from "https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js";
 
 const client = createClient({
   // space: process.env.CONTENTFUL_SPACE_ID,
