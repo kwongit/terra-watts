@@ -6,8 +6,8 @@ window.addEventListener("DOMContentLoaded", async function () {
   try {
     // Initialize Contentful client directly
     const client = contentful.createClient({
-      space: "a5vqb0h4v6pt",
-      accessToken: "oGXO7WACT5mN4bS502lZjlsTfJT8t49z1rXpMYK4r64",
+      space: "",
+      accessToken: "",
     });
 
     // Fetch header content
