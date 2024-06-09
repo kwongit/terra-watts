@@ -495,8 +495,14 @@ input, select, textarea {
 		color: #3A3E44;
 	}
 
-	.alt-h2, .alt-p {
+	.alt-h2-team, .alt-h2-contact, .alt-p {
 		color: #E3DAD8
+	}
+
+	.alt-h2-team, .alt-h2-partnerships, .alt-h2-contact {
+		text-transform: capitalize;
+		font-weight: 700;
+		letter-spacing: normal;
 	}
 
 	blockquote {
