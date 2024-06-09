@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const client = contentful.createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    // space: process.env.CONTENTFUL_SPACE_ID,
+    // accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     // process does not work. need to find another way to store API keys
+    space: "gxq41zi7q6dh",
+    accessToken: "gXpDSgdpbtZzG7Ze0_RvckuQLHLBWoHOw3e8zz-qoSQ",
   });
 
   // Function to update a section
@@ -28,26 +30,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Function to update the gallery
+  // function updateGallery(items) {
+  //   const gallery = document.querySelector(".gallery");
+  //   if (gallery) {
+  //     items.forEach((item, index) => {
+  //       const article = gallery.querySelector(
+  //         `article:nth-child(${index + 1})`
+  //       );
+  //       if (article) {
+  //         const link = article.querySelector("a");
+  //         const img = article.querySelector("img");
+  //         const h3 = article.querySelector("h3");
+  //         const p = article.querySelector("p");
+
+  //         if (link) link.href = item.link;
+  //         if (img) img.src = item.imageUrl;
+  //         if (img) img.alt = item.title;
+  //         if (h3) h3.textContent = item.title;
+  //         if (p) p.textContent = item.description;
+  //       }
+  //     });
+  //   }
+  // }
+
+  // Function to create and append new gallery items
   function updateGallery(items) {
     const gallery = document.querySelector(".gallery");
-    // console.log(gallery);
     if (gallery) {
-      items.forEach((item, index) => {
-        const article = gallery.querySelector(
-          `article:nth-child(${index + 1})`
-        );
-        if (article) {
-          const link = article.querySelector("a");
-          const img = article.querySelector("img");
-          const h3 = article.querySelector("h3");
-          const p = article.querySelector("p");
+      gallery.innerHTML = ""; // Clear existing content
+      items.forEach((item) => {
+        const article = document.createElement("article");
 
-          if (link) link.href = item.link;
-          if (img) img.src = item.imageUrl;
-          if (img) img.alt = item.title;
-          if (h3) h3.textContent = item.title;
-          if (p) p.textContent = item.description;
-        }
+        const link = document.createElement("a");
+        link.href = item.link;
+        link.classList.add("image");
+        link.target = "_blank";
+
+        const img = document.createElement("img");
+        img.src = item.imageUrl;
+        img.alt = item.title;
+        link.appendChild(img);
+
+        const caption = document.createElement("div");
+        caption.classList.add("caption");
+
+        const h3 = document.createElement("h3");
+        h3.textContent = item.title;
+
+        const p = document.createElement("p");
+        p.textContent = item.description;
+
+        caption.appendChild(h3);
+        caption.appendChild(p);
+
+        article.appendChild(link);
+        article.appendChild(caption);
+
+        gallery.appendChild(article);
       });
     }
   }

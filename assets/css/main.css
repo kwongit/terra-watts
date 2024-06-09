@@ -46,15 +46,20 @@
 	line-height: 3em;
 	position: absolute;
 	right: 0.7em;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	top: 0.7em;
+	border-radius: 10px;
+	background-color: #A69490;
+	display: inline-flex;
+	padding: 15px 0px;
+	align-items: center;
 }
 
 #header nav a {
 	border: 0;
 	display: inline-block;
 	padding: 0 1em;
-	color: white;
+	color: #3D3129;
 }
 
 #header nav a:before {
@@ -499,7 +504,7 @@ input, select, textarea {
 		color: #E3DAD8
 	}
 
-	.alt-h2-team, .alt-h2-partnerships, .alt-h2-contact {
+	h2, .alt-h2-team, .alt-h2-partnerships, .alt-h2-contact {
 		text-transform: capitalize;
 		font-weight: 700;
 		letter-spacing: normal;
@@ -6921,6 +6926,9 @@ input, select, textarea {
 		-webkit-overflow-scrolling: touch;
 		position: relative;
 		background-color: transparent;
+		justify-content: center;
+		gap: 1rem;
+		padding-bottom: 3rem;
 	}
 
 		.gallery.style2 input, .gallery.style2 select, .gallery.style2 textarea {
