@@ -1,9 +1,5 @@
-import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from "./config.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   const client = contentful.createClient({
-    // space: CONTENTFUL_SPACE_ID,
-    // accessToken: CONTENTFUL_ACCESS_TOKEN,
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
