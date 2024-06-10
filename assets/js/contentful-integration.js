@@ -1,4 +1,4 @@
-import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from "./config";
+import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from "./config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const client = contentful.createClient({
