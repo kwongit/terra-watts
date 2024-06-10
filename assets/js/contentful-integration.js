@@ -2,7 +2,6 @@ import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from "./config";
 
 document.addEventListener("DOMContentLoaded", () => {
   const client = contentful.createClient({
-    // process does not work. need to find another way to store API keys
     space: CONTENTFUL_SPACE_ID,
     accessToken: CONTENTFUL_ACCESS_TOKEN,
   });
