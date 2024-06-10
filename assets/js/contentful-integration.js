@@ -1,8 +1,10 @@
+import { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } from "./config";
+
 document.addEventListener("DOMContentLoaded", () => {
   const client = contentful.createClient({
     // process does not work. need to find another way to store API keys
-    space: window.CONTENTFUL_SPACE_ID,
-    accessToken: window.CONTENTFUL_ACCESS_TOKEN,
+    space: CONTENTFUL_SPACE_ID,
+    accessToken: CONTENTFUL_ACCESS_TOKEN,
   });
 
   // Function to update a section
