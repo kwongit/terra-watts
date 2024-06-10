@@ -55,6 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateGallery(items) {
     const gallery = document.querySelector(".gallery");
     if (gallery) {
+      // Reverse the array of items
+      items.reverse();
+
       gallery.innerHTML = ""; // Clear existing content
       items.forEach((item) => {
         const article = document.createElement("article");
@@ -62,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
         link.href = item.link;
         link.classList.add("image");
-        link.target = "_blank";
+        link.target = "#";
 
         const img = document.createElement("img");
         img.src = item.imageUrl;
