@@ -2,7 +2,7 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  entry: "./assets/js/contentful-integration.js",
+  entry: "./src/contentful-integration.ts", // Update entry point to TypeScript file
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -10,16 +10,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.ts$/, // Match TypeScript files
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env"],
-          },
+          loader: "ts-loader", // Use ts-loader to transpile TypeScript files
         },
       },
     ],
+  },
+  resolve: {
+    extensions: [".ts", ".js"], // Add .ts extension to resolve TypeScript files
   },
   plugins: [new Dotenv()],
   devServer: {
