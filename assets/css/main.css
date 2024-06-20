@@ -59,6 +59,13 @@
 	color: #3D3129;
 }
 
+#header nav a:hover {
+	color: white;
+	background-color: #3A3E44;
+	transform: scale(1.05);
+	border-radius: 10px;
+}
+
 #header nav a:before {
 	float: right;
 	margin-left: 0.75em;
@@ -2794,8 +2801,14 @@ input, select, textarea {
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
 	}
 
+	a.icon.style2:before {
+		transition: transform 0.3s ease;
+	}
+
 	a.icon.style2:hover:before {
 		box-shadow: inset 0 0 0 1px #47D3E5;
+		background-color: #47D3E5;
+		transform: translateY(-10px);
 	}
 
 	a.icon.style2:active:before {
@@ -5100,6 +5113,7 @@ input, select, textarea {
 			width: 35%;
 			min-width: 25rem;
 			border-radius: 0;
+			overflow: hidden;
 		}
 
 			.spotlight.style1 .image img {
@@ -5118,6 +5132,7 @@ input, select, textarea {
 				width: 100%;
 				height: 100%;
 				border-radius: 0;
+
 			}
 
 		@media screen and (max-width: 1680px) {
@@ -6060,6 +6075,17 @@ input, select, textarea {
 
 	.spotlight.style3.invert.android .image:after {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='64px' height='32px' viewBox='0 0 64 32' zoomAndPan='disable'%3E%3Cstyle%3Erect %7Bfill: transparent%3B stroke: white%3B stroke-width: 1px%3B %7D%3C/style%3E%3Crect rx='4' ry='4' x='6' y='4' width='52' height='24' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
+	}
+
+	section .image img {
+		transition: transform 0.3s ease;
+	}
+
+	#two .image img:hover,
+	#four .image img:hover,
+	#five .image img:hover,
+	.partnership-logo:hover {
+		transform: scale(1.05);
 	}
 
 /* Gallery (transitions) */
