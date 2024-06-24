@@ -287,7 +287,8 @@ input, select, textarea {
 /* Type */
 
 	html {
-		font-size: 18pt;
+		/* font-size: 18pt; */
+		font-size: 16pt;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -477,6 +478,7 @@ input, select, textarea {
 
 		h2 {
 			font-size: 2rem;
+			/* font-size: 1.5rem; */
 		}
 
 		h3 {
