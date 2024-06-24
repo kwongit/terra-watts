@@ -4807,13 +4807,7 @@ input, select, textarea {
 
 				.spotlight.style1 .image img {
 					position: relative;
-				}
-
-				.image-transform img {
 					max-height: 50vh;
-					/* Adjust this value as needed */
-					width: auto;
-					height: auto;
 				}
 
 	}
