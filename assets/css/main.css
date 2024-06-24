@@ -127,6 +127,8 @@
 	#header nav {
 		/* top: 0;
 		right: 0; */
+		/* top: 0;
+		right: 0; */
 		height: inherit;
 		line-height: inherit;
 	}
@@ -5651,7 +5653,8 @@ input, select, textarea {
 
 	.spotlight.style3 .image {
 		border-color: rgba(0, 0, 0, 0.2);
-		background-color: rgba(0, 0, 0, 0.2);
+		/* background-color: rgba(0, 0, 0, 0.2); */
+		background-color: #6E794F;
 		border-width: 0;
 	}
 
