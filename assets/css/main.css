@@ -7703,16 +7703,3 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
-
-.image-transform {
-	perspective: 1000px;
-}
-
-.image-transform img {
-	transition: transform 0.1s ease;
-	transform-style: preserve-3d;
-}
-
-.image-transform:hover {
-	cursor: move;
-}
