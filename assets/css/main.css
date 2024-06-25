@@ -7700,25 +7700,9 @@ input, select, textarea {
 				box-shadow: none !important;
 			}
 
-/* @keyframes revealFromLeft {
+@keyframes revealAndFadeOut {
 	0% {
-		opacity: 0.1;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
-.lightning-image {
-	opacity: 0;
-	animation: revealFromLeft 10s ease-in-out infinite;
-} */
-
-@keyframes revealFromLeft {
-	0% {
-		opacity: 0;
-		background-position: -100% center;
+		opacity: 0.9;
 	}
 
 	50% {
@@ -7726,15 +7710,15 @@ input, select, textarea {
 	}
 
 	100% {
-		opacity: 0;
-		background-position: 100% center;
+		opacity: 0.9;
 	}
 }
 
 .lightning-image {
-	position: relative;
-	width: 100%;
-	height: auto;
-	animation: revealFromLeft 8s ease-in-out infinite;
-	background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+	animation: revealAndFadeOut 3s ease-in-out infinite;
+}
+
+.lightning-image.flipped {
+	transform: scaleX(-1);
+	animation: revealAndFadeOut 3.5s ease-in-out infinite;
 }
