@@ -7726,3 +7726,12 @@ input, select, textarea {
 	transform: scaleX(-1);
 	animation: revealAndFadeOut 10.5s ease-in-out infinite;
 }
+
+.fade-in {
+	opacity: 0;
+	transition: opacity 1s ease-out;
+}
+
+.fade-in.in-view {
+	opacity: 1;
+}
