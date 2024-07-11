@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     link?: string;
   }
 
+  interface PartnershipFields {
+    title: string;
+    logo: { fields: { file: { url: string } } };
+  }
+
   // Function to update a section
   function updateSection(sectionId: string, title: string, content: string, imageUrl: string | null) {
     const section = document.getElementById(sectionId);
@@ -89,6 +94,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Function to update partnerships
+  function updatePartnerships(partnerships: { title: string, logoUrl: string }[]) {
+    const partnershipsSection = document.querySelector("#partnerships .items");
+    if (partnershipsSection) {
+      // Reverse the array of items
+      partnerships.reverse();
+
+      partnershipsSection.innerHTML = ""; // Clear existing content
+
+      partnerships.forEach((partnership) => {
+        const section = document.createElement("section");
+
+        const img = document.createElement("img");
+        img.classList.add("partnership-logo");
+        img.src = partnership.logoUrl;
+        img.alt = `${partnership.title} Logo`;
+
+        section.appendChild(img);
+        partnershipsSection.appendChild(section);
+      });
+    }
+  }
+
   client
     .getEntries<HeaderFields>({
       content_type: "header",
@@ -144,6 +172,20 @@ document.addEventListener("DOMContentLoaded", () => {
         link: entry.fields.link ? entry.fields.link : "#",
       }));
       updateGallery(galleryItems);
+    })
+    .catch((err) => console.error("Error fetching Contentful data:", err));
+
+  // Fetch and update partnerships
+  client
+    .getEntries<PartnershipFields>({
+      content_type: "partnership",
+    })
+    .then((response) => {
+      const partnerships = response.items.map((entry) => ({
+        title: entry.fields.title,
+        logoUrl: entry.fields.logo.fields.file.url,
+      }));
+      updatePartnerships(partnerships);
     })
     .catch((err) => console.error("Error fetching Contentful data:", err));
 });
