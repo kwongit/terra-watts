@@ -173,7 +173,7 @@
 
 }
 
-#one img {
+#nav-bar img {
 	max-width: 100%;
 	height: auto;
 }
@@ -3238,18 +3238,18 @@ input, select, textarea {
 /* Banner (transitions) */
 
 	.banner.onload-content-fade-right .content {
-		-moz-transition: opacity 0.5s ease-in-out, -moz-transform 0.5s ease-in-out;
+		/* -moz-transition: opacity 0.5s ease-in-out, -moz-transform 0.5s ease-in-out;
 		-webkit-transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 		-ms-transition: opacity 0.5s ease-in-out, -ms-transform 0.5s ease-in-out;
-		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; */
 	}
 
 	body.is-preload .banner.onload-content-fade-right .content {
-		-moz-transform: translateX(-1rem);
+		/* -moz-transform: translateX(-1rem);
 		-webkit-transform: translateX(-1rem);
 		-ms-transform: translateX(-1rem);
 		transform: translateX(-1rem);
-		opacity: 0;
+		opacity: 0; */
 	}
 
 /* Banner (style1) */
@@ -4640,7 +4640,7 @@ input, select, textarea {
 
 /* Spotlight */
 
-	#one {
+	#nav-bar {
 		background-color: #C7B7B4;
 		background-position: center;
 		background-size: cover;
@@ -4650,11 +4650,11 @@ input, select, textarea {
 		width: 100%;
 	}
 
-	#two, #four {
+	#spotlight-one, #spotlight-three {
 		background-color: #6E794F;
 	}
 
-	#three, #six {
+	#spotlight-two, #six {
 		background-color: #C5C8DA;
 	}
 
@@ -5706,8 +5706,8 @@ input, select, textarea {
 		transition: transform 0.3s ease;
 	}
 
-	#two .image img:hover,
-	#four .image img:hover,
+	#spotlight-one .image img:hover,
+	#spotlight-three .image img:hover,
 	#five .image img:hover,
 	.partnership-logo:hover {
 		transform: scale(1.05);
@@ -6068,7 +6068,7 @@ input, select, textarea {
 		position: relative;
 		background-color: transparent;
 		justify-content: center;
-		gap: 1rem;
+		gap: 2rem;
 		padding-bottom: 3rem;
 	}
 
@@ -7723,17 +7723,17 @@ input, select, textarea {
 }
 
 .lightning-image {
-	animation: revealAndFadeOut 10s ease-in-out infinite;
+	animation: revealAndFadeOut 7s ease-in-out infinite;
 }
 
 .lightning-image.flipped {
 	transform: scaleX(-1);
-	animation: revealAndFadeOut 10.5s ease-in-out infinite;
+	animation: revealAndFadeOut 7.5s ease-in-out infinite;
 }
 
 .fade-in {
 	opacity: 0;
-	transition: opacity 1s ease-out;
+	transition: opacity 0.5s ease-in-out;
 }
 
 .fade-in.in-view {
