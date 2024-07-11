@@ -173,7 +173,7 @@
 
 }
 
-#nav-bar img {
+#banner-main img {
 	max-width: 100%;
 	height: auto;
 }
@@ -4640,7 +4640,7 @@ input, select, textarea {
 
 /* Spotlight */
 
-	#nav-bar {
+	#banner-main {
 		background-color: #C7B7B4;
 		background-position: center;
 		background-size: cover;
@@ -4654,11 +4654,11 @@ input, select, textarea {
 		background-color: #6E794F;
 	}
 
-	#spotlight-two, #six {
+	#spotlight-two, #partnerships {
 		background-color: #C5C8DA;
 	}
 
-	#five {
+	#team-members {
 		background-color: #3D3129;
 	}
 
@@ -5708,7 +5708,7 @@ input, select, textarea {
 
 	#spotlight-one .image img:hover,
 	#spotlight-three .image img:hover,
-	#five .image img:hover,
+	#team-members .image img:hover,
 	.partnership-logo:hover {
 		transform: scale(1.05);
 	}
