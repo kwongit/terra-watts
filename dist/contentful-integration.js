@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     })
-        .catch(function (err) { return console.error("Error fetching Contentful data:", err); });
+        .catch(function (err) { return console.error("Error fetching Contentful Nav Bar data:", err); });
     // Fetch and update sections
     client
         .getEntries({
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateSection(sectionId, title, content, imageUrl);
         });
     })
-        .catch(function (err) { return console.error("Error fetching Contentful data:", err); });
+        .catch(function (err) { return console.error("Error fetching Contentful Main Content data:", err); });
     // Fetch and update gallery
     client
         .getEntries({
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }); });
         updateGallery(galleryItems);
     })
-        .catch(function (err) { return console.error("Error fetching Contentful data:", err); });
+        .catch(function (err) { return console.error("Error fetching Contentful Team Member data:", err); });
     // Fetch and update partnerships
     client
         .getEntries({
@@ -140,5 +140,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }); });
         updatePartnerships(partnerships);
     })
-        .catch(function (err) { return console.error("Error fetching Contentful data:", err); });
+        .catch(function (err) { return console.error("Error fetching Contentful Partnership data:", err); });
 });

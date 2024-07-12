@@ -59,36 +59,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gallery) {
       // Reverse the array of items
       items.reverse();
-
       gallery.innerHTML = ""; // Clear existing content
       items.forEach((item) => {
         const article = document.createElement("article");
-
         const link = document.createElement("a");
         link.href = item.link;
         link.classList.add("image");
         link.target = "#";
-
         const img = document.createElement("img");
         img.src = item.imageUrl;
         img.alt = item.title;
         link.appendChild(img);
-
         const caption = document.createElement("div");
         caption.classList.add("caption");
-
         const h3 = document.createElement("h3");
         h3.textContent = item.title;
-
         const p = document.createElement("p");
         p.textContent = item.description;
-
         caption.appendChild(h3);
         caption.appendChild(p);
-
         article.appendChild(link);
         article.appendChild(caption);
-
         gallery.appendChild(article);
       });
     }
@@ -100,17 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (partnershipsSection) {
       // Reverse the array of items
       partnerships.reverse();
-
       partnershipsSection.innerHTML = ""; // Clear existing content
-
       partnerships.forEach((partnership) => {
         const section = document.createElement("section");
-
         const img = document.createElement("img");
         img.classList.add("partnership-logo");
         img.src = partnership.logoUrl;
         img.alt = `${partnership.title} Logo`;
-
         section.appendChild(img);
         partnershipsSection.appendChild(section);
       });
@@ -126,10 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (headerEntry) {
         const title = headerEntry.fields.title;
         const navLinkText = headerEntry.fields.navLinkText;
-
         const headerTitle = document.querySelector("#header h1 a");
         const navLink = document.querySelector("#header nav a");
-
         if (headerTitle) {
           headerTitle.textContent = title;
         }
@@ -138,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     })
-    .catch((err) => console.error("Error fetching Contentful data:", err));
+    .catch((err) => console.error("Error fetching Contentful Nav Bar data:", err));
 
   // Fetch and update sections
   client
@@ -153,11 +138,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const imageUrl = entry.fields.image
           ? entry.fields.image.fields.file.url
           : null;
-
         updateSection(sectionId, title, content, imageUrl);
       });
     })
-    .catch((err) => console.error("Error fetching Contentful data:", err));
+    .catch((err) => console.error("Error fetching Contentful Main Content data:", err));
 
   // Fetch and update gallery
   client
@@ -173,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }));
       updateGallery(galleryItems);
     })
-    .catch((err) => console.error("Error fetching Contentful data:", err));
+    .catch((err) => console.error("Error fetching Contentful Team Member data:", err));
 
   // Fetch and update partnerships
   client
@@ -187,5 +171,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }));
       updatePartnerships(partnerships);
     })
-    .catch((err) => console.error("Error fetching Contentful data:", err));
+    .catch((err) => console.error("Error fetching Contentful Partnership data:", err));
 });
