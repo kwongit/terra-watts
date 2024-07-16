@@ -6210,9 +6210,33 @@ input, select, textarea {
 			display: block;
 			position: relative;
 			overflow: hidden;
-			width: 14.5rem;
+			width: 12.5rem;
 			max-width: 75vw;
 			border-radius: 50%;
+		}
+
+		@media screen and (max-width: 636px) {
+			.gallery.style2 article {
+				width: 10.5rem;
+			}
+		}
+
+		@media screen and (max-width: 550px) {
+			.gallery.style2 article {
+				width: 8.5rem;
+			}
+		}
+
+		@media screen and (max-width: 476px) {
+			.gallery.style2 article {
+				width: 7rem;
+			}
+		}
+
+		@media screen and (max-width: 376px) {
+			.gallery.style2 article {
+				width: 6rem;
+			}
 		}
 
 			.gallery.style2 article .image {
