@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://terra-watts.com/$1",
-      "permanent": true
-    }
-  ]
-}
