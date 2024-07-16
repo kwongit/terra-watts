@@ -6210,12 +6210,14 @@ input, select, textarea {
 			display: block;
 			position: relative;
 			overflow: hidden;
-			width: 12.5rem;
+			width: 16.5rem;
 			max-width: 75vw;
 			border-radius: 50%;
 		}
 
-		@media screen and (max-width: 636px) {
+		/* For additional team members */
+
+		/* @media screen and (max-width: 636px) {
 			.gallery.style2 article {
 				width: 10.5rem;
 			}
@@ -6237,7 +6239,7 @@ input, select, textarea {
 			.gallery.style2 article {
 				width: 6rem;
 			}
-		}
+		} */
 
 			.gallery.style2 article .image {
 				display: block;
