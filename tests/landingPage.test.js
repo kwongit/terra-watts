@@ -1,18 +1,34 @@
 import { test, expect } from "@playwright/test";
 
-test("Landing Page should load successfully", async ({ page }) => {
+test("Check page title and description meta tags are correct", async ({
+  page,
+}) => {
   // Use 'page' to interact with the web app, e.g., navigating to a URL
   await page.goto("https://terra-watts.com/");
 
   // Use 'expect' to assert conditions about the page state, e.g., check the title. This is the preferred way to check title, as it waits for the title to be available before checking it (unlike page.title()) - https://playwright.dev/docs/api/class-page#pagewaitfortitle
   await expect(page).toHaveTitle("Terra Watts - Renewable Energy Solutions");
 
-  // TODO: Add more tests here
-  // Check for description meta tag content - https://playwright.dev/docs/api/class-locator#locatorgetattribute
-  // const description = await page
-  //   .locator('meta[name="description"]')
-  //   .getAttribute("content");
-  // expect(description).toBe(
-  //   "Terra Watts provides innovative subsurface wireless transmission to power your future."
-  // );
+  // Check for description meta tag content - https://playwright.dev/docs/api/class-locator#locatorgetattribute. This is the preferred way to check meta tag content, as it waits for the content to be available before checking it (unlike page.getAttribute()) - https://playwright.dev/docs/api/class-page#pagegetattribute.
+  // Note: The description meta tag content is not visible on the page, so we need to use getAttribute() to get the content. If the content is visible on the page, we can use textContent() to get the content.
+  const description = await page
+    .locator('meta[name="description"]')
+    .getAttribute("content");
+  expect(description).toBe(
+    "Terra Watts provides innovative subsurface wireless transmission to power your future."
+  );
 });
+
+// TODO: Add more tests here
+
+// Navigation Link: Verify that the "Want To Chat?" link navigates to the Contact section.
+
+// Spotlight Sections: Ensure that each spotlight section has the expected content.
+
+// Meet the Team Section: Verify the CEO's information is displayed correctly and the link works.
+
+// Partnerships Section: Check that the partnerships section displays the correct logo.
+
+// Social Media Links: Validate that social media links are present and direct to the correct URLs.
+
+// Images Visibility: Check that important images are visible on the page.
