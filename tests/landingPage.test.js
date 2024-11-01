@@ -1,5 +1,8 @@
 import { test, expect } from "@playwright/test";
 
+// Enable headed mode for debugging
+test.use({ headless: false });
+
 // Page Title and Description
 test("Check page title and description meta tags are correct", async ({
   page,
@@ -25,7 +28,7 @@ test("Check 'Want To Chat?' button navigates to Contact section", async ({
   page,
 }) => {
   await page.goto("https://terra-watts.com/");
-  await page.click('button:has-text("Want To Chat?")');
+  await page.click('text="Want To Chat?"');
   await page.waitForSelector("#contact");
   const contactVisible = await page.isVisible("#contact");
   expect(contactVisible).toBe(true);
