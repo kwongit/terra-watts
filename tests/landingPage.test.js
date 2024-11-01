@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 
+// Page Title and Description
 test("Check page title and description meta tags are correct", async ({
   page,
 }) => {
@@ -19,9 +20,17 @@ test("Check page title and description meta tags are correct", async ({
   );
 });
 
-// TODO: Add more tests here
-
-// Navigation Link: Verify that the "Want To Chat?" link navigates to the Contact section.
+// Navigation Link
+test("Check 'Want To Chat?' button navigates to Contact section", async ({
+  page,
+}) => {
+  await page.goto("https://terra-watts.com/");
+  await page.click('button:has-text("Want To Chat?")');
+  await page.waitForSelector("#contact");
+  const contactVisible = await page.isVisible("#contact");
+  expect(contactVisible).toBe(true);
+  await expect(page).toHaveURL("https://terra-watts.com/#contact");
+});
 
 // Spotlight Sections: Ensure that each spotlight section has the expected content.
 
