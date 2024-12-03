@@ -24,6 +24,7 @@ test("Check page title and description meta tags are correct", async ({
 });
 
 // Navigation Link
+// TODO: Need to debug this test
 test("Check 'Want To Chat?' button navigates to Contact section", async ({
   page,
 }) => {
