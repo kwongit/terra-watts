@@ -28,7 +28,6 @@ test.describe("Landing Page Tests", () => {
   });
 
   // Navigation Link
-  // TODO: is this enough to test the navigation links?
   test("Check 'Want To Chat?' link navigates to Contact section", async ({
     page,
   }) => {
@@ -37,6 +36,19 @@ test.describe("Landing Page Tests", () => {
 
     // Verify the URL includes #contact
     await expect(page).toHaveURL("https://terra-watts.com/#contact");
+
+    // Verify the contact section is visible
+    const isContactVisible = await page.isVisible("#contact");
+    expect(isContactVisible).toBe(true);
+
+    // Check if the page scrolled to the contact section
+    const scrolledToContact = await page.evaluate(() => {
+      const contactSection = document.querySelector("#contact");
+      const rect = contactSection.getBoundingClientRect();
+      return rect.top >= 0 && rect.top < window.innerHeight; // Ensures the top of the section is within the viewport
+    });
+
+    expect(scrolledToContact).toBe(true);
   });
 
   // TODO: next tests to add
