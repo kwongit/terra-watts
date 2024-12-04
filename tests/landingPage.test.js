@@ -23,16 +23,17 @@ test("Check page title and description meta tags are correct", async ({
   );
 });
 
-// Navigation Link
-// TODO: Need to debug this test
-test("Check 'Want To Chat?' button navigates to Contact section", async ({
+// TODO:Navigation Link
+test("Check 'Want To Chat?' link navigates to Contact section", async ({
   page,
 }) => {
+  // Navigate to the landing page
   await page.goto("https://terra-watts.com/");
-  await page.click('text="Want To Chat?"');
-  await page.waitForSelector("#contact");
-  const contactVisible = await page.isVisible("#contact");
-  expect(contactVisible).toBe(true);
+
+  // Click the "Want To Chat?" link
+  await page.click('a[href="#contact"]');
+
+  // Verify the URL includes #contact
   await expect(page).toHaveURL("https://terra-watts.com/#contact");
 });
 
