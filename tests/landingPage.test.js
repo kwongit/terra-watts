@@ -10,7 +10,7 @@ test.describe("Landing Page Tests", () => {
     await page.goto("https://terra-watts.com/");
   });
 
-  // Page Title and Description
+  // 1. Page Title and Description
   test("Check page title and description meta tags are correct", async ({
     page,
   }) => {
@@ -22,12 +22,13 @@ test.describe("Landing Page Tests", () => {
     const description = await page
       .locator('meta[name="description"]')
       .getAttribute("content");
+
     expect(description).toBe(
       "Terra Watts provides innovative subsurface wireless transmission to power your future."
     );
   });
 
-  // Navigation Link
+  // 2. Navigation Link
   test("Check 'Want To Chat?' link navigates to Contact section", async ({
     page,
   }) => {
@@ -45,16 +46,17 @@ test.describe("Landing Page Tests", () => {
     const scrolledToContact = await page.evaluate(() => {
       const contactSection = document.querySelector("#contact");
       const rect = contactSection.getBoundingClientRect();
-      return rect.top >= 0 && rect.top < window.innerHeight; // Ensures the top of the section is within the viewport
+      // Ensures the top of the section is within the viewport
+      return rect.top >= 0 && rect.top < window.innerHeight;
     });
 
     expect(scrolledToContact).toBe(true);
   });
 
   // TODO: next tests to add
-  // Spotlight Sections: Ensure that each spotlight section has the expected content.
-  // Meet the Team Section: Verify the CEO's information is displayed correctly and the link works.
-  // Partnerships Section: Check that the partnerships section displays the correct logo.
-  // Social Media Links: Validate that social media links are present and direct to the correct URLs.
-  // Images Visibility: Check that important images are visible on the page.
+  // 3. Spotlight Sections: Ensure that each spotlight section has the expected content.
+  // 4. Meet the Team Section: Verify the CEO's information is displayed correctly and the link works.
+  // 5. Partnerships Section: Check that the partnerships section displays the correct logo.
+  // 6. Social Media Links: Validate that social media links are present and direct to the correct URLs.
+  // 7. Images Visibility: Check that important images are visible on the page.
 });
