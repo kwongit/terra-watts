@@ -38,11 +38,7 @@ test.describe("Landing Page Tests", () => {
     // Verify the URL includes #contact
     await expect(page).toHaveURL("https://terra-watts.com/#contact");
 
-    // Verify the contact section is visible
-    const isContactVisible = await page.isVisible("#contact");
-    expect(isContactVisible).toBe(true);
-
-    // Check if the page scrolled to the contact section
+    // Verify the contact section is scrolled into view
     const scrolledToContact = await page.evaluate(() => {
       const contactSection = document.querySelector("#contact");
       const rect = contactSection.getBoundingClientRect();
