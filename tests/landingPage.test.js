@@ -49,7 +49,6 @@ test.describe("Landing Page Tests", () => {
     expect(scrolledToContact).toBe(true);
   });
 
-  // TODO: next tests to add
   // 3. Spotlight Sections
   test("Check spotlight sections have the expected content", async ({
     page,
@@ -57,10 +56,10 @@ test.describe("Landing Page Tests", () => {
     // Extract headings and paragraphs within spotlight sections
     const spotlightContent = await page.$$eval(".spotlight", (sections) =>
       sections.map((section) => {
-        const heading = section.querySelector("h2")?.textContent?.trim();
+        const heading = section.querySelector("h2").textContent.trim();
         const paragraph = section
           .querySelector("p")
-          ?.textContent?.replace(/\s+/g, " ") // Normalize whitespace
+          .textContent.replace(/\s+/g, " ") // Normalize whitespace
           .trim();
         return { heading, paragraph };
       })
@@ -92,6 +91,7 @@ test.describe("Landing Page Tests", () => {
     expect(spotlightContent).toEqual(expectedContent);
   });
 
+  // TODO: next tests to add
   // 4. Meet the Team Section: Verify the CEO's information is displayed correctly and the link works.
   // 5. Partnerships Section: Check that the partnerships section displays the correct logo.
   // 6. Social Media Links: Validate that social media links are present and direct to the correct URLs.
