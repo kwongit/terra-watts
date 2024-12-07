@@ -55,12 +55,19 @@ test.describe("Landing Page Tests", () => {
   }) => {
     // Extract headings and paragraphs within spotlight sections
     const spotlightContent = await page.$$eval(".spotlight", (sections) =>
+      // `page.$$eval` selects all elements with the class "spotlight" and evaluates a function on them.
       sections.map((section) => {
+        // For each spotlight section, extract the text content of the <h2> heading.
         const heading = section.querySelector("h2").textContent.trim();
+
+        // Extract the text content of the <p> paragraph.
         const paragraph = section
-          .querySelector("p")
-          .textContent.replace(/\s+/g, " ") // Normalize whitespace
-          .trim();
+          .querySelector("p") // Select the <p> element within the section.
+          .textContent // Get the text content of the paragraph.
+          .replace(/\s+/g, " ") // Replace multiple spaces, newlines, and tabs with a single space to normalize whitespace.
+          .trim(); // Remove leading and trailing spaces.
+
+        // Return an object containing the extracted heading and paragraph.
         return { heading, paragraph };
       })
     );
@@ -84,10 +91,10 @@ test.describe("Landing Page Tests", () => {
       },
     ];
 
-    // Verify the number of spotlight sections
+    // Verify that the number of spotlight sections found matches the expected number (3)
     expect(spotlightContent.length).toBe(3);
 
-    // Verify the content of each section
+    // Verify that the extracted spotlight content matches the expected content
     expect(spotlightContent).toEqual(expectedContent);
   });
 
