@@ -81,8 +81,43 @@ test.describe("Landing Page Tests", () => {
   });
 
   // TODO: next tests to add
-  // 4. Meet the Team Section: Verify the CEO's information is displayed correctly and the link works.
+  // 4. Meet the Team Section
+  test("Check team section displays CEO information and link works", async ({
+    page,
+    context,
+  }) => {
+    // Verify the heading of the team section
+    const teamHeading = await page.textContent("#team-members h2");
+    expect(teamHeading).toBe("Meet the team");
+
+    // Verify the title of the team member
+    const memberTitle = await page.textContent("#team-members h3");
+    expect(memberTitle).toBe("Co-Founder & CEO");
+
+    // Verify the name of the team member
+    const memberName = await page.textContent("#team-members p");
+    expect(memberName).toBe("Kaitlyn Suarez");
+
+    // Verify the href attribute of the link
+    const memberLink = await page.getAttribute("#team-members a", "href");
+    expect(memberLink).toBe("https://www.activate.org/terra-watts");
+
+    // Handle the link opening in a new tab
+    const [newPage] = await Promise.all([
+      context.waitForEvent("page"), // Wait for the new tab to open
+      page.click("#team-members a"), // Click the link
+    ]);
+
+    // Wait for the new page to fully load
+    await newPage.waitForLoadState("domcontentloaded");
+
+    // Verify the URL of the new tab
+    expect(newPage.url()).toBe("https://www.activate.org/terra-watts");
+  });
+
   // 5. Partnerships Section: Check that the partnerships section displays the correct logo.
+
   // 6. Social Media Links: Validate that social media links are present and direct to the correct URLs.
+
   // 7. Images Visibility: Check that important images are visible on the page.
 });
