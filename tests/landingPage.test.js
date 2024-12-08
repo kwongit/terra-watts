@@ -40,7 +40,9 @@ test.describe("Landing Page Tests", () => {
     await expect(page).toHaveURL("https://terra-watts.com/#contact");
 
     // Verify the contact section is scrolled into view
+    // page.evaluate() allows you to run JavaScript code within the browser's context, giving you direct access to the DOM, including methods like getBoundingClientRect().
     const scrolledToContact = await page.evaluate(() => {
+      // Use querySelector() (inside page.evaluate or page.$$eval) when you need to perform more complex interactions within the browser context.
       const contactSection = document.querySelector("#contact");
       const rect = contactSection.getBoundingClientRect();
       // Ensures the top of the section is within the viewport
@@ -55,10 +57,12 @@ test.describe("Landing Page Tests", () => {
     page,
   }) => {
     // Extract headings and paragraphs within spotlight sections
+    // If you’re extracting data from multiple elements in bulk, page.$$eval() is typically the way to go.
     const spotlightContent = await page.$$eval(".spotlight", (sections) =>
       // `page.$$eval` selects all elements with the class "spotlight" and evaluates a function on them.
       sections.map((section) => {
         // For each spotlight section, extract the text content of the <h2> heading.
+        // Use querySelector() (inside page.evaluate or page.$$eval) when you need to perform more complex interactions within the browser context.
         const heading = section.querySelector("h2").textContent.trim();
 
         // Extract the text content of the <p> paragraph.
@@ -87,6 +91,7 @@ test.describe("Landing Page Tests", () => {
     context,
   }) => {
     // Verify the heading of the team section
+    // Use page.textContent() when you want to quickly get the text content of an element and let Playwright handle waiting for the element.
     const teamHeading = await page.textContent("#team-members h2");
     expect(teamHeading).toBe("Meet the team");
 
