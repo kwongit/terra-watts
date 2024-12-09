@@ -58,8 +58,8 @@ test.describe("Landing Page Tests", () => {
   }) => {
     // Extract headings and paragraphs within spotlight sections
     // If you’re extracting data from multiple elements in bulk, page.$$eval() is typically the way to go.
+    // `page.$$eval` selects all elements with the class "spotlight" and evaluates a function on them.
     const spotlightContent = await page.$$eval(".spotlight", (sections) =>
-      // `page.$$eval` selects all elements with the class "spotlight" and evaluates a function on them.
       sections.map((section) => {
         // For each spotlight section, extract the text content of the <h2> heading.
         // Use querySelector() (inside page.evaluate or page.$$eval) when you need to perform more complex interactions within the browser context.
@@ -67,10 +67,13 @@ test.describe("Landing Page Tests", () => {
 
         // Extract the text content of the <p> paragraph.
         const paragraph = section
-          .querySelector("p") // Select the <p> element within the section.
-          .textContent // Get the text content of the paragraph.
-          .replace(/\s+/g, " ") // Replace multiple spaces, newlines, and tabs with a single space to normalize whitespace.
-          .trim(); // Remove leading and trailing spaces.
+          // Select the <p> element within the section.
+          .querySelector("p")
+          // Get the text content of the paragraph.
+          .textContent // Replace multiple spaces, newlines, and tabs with a single space to normalize whitespace.
+          .replace(/\s+/g, " ")
+          // Remove leading and trailing spaces.
+          .trim();
 
         // Return an object containing the extracted heading and paragraph.
         return { heading, paragraph };
@@ -109,6 +112,7 @@ test.describe("Landing Page Tests", () => {
 
     // Handle the link opening in a new tab
     const [newPage] = await Promise.all([
+      // wait for the click and the new tab opening concurrently.
       context.waitForEvent("page"), // Wait for the new tab to open
       page.click("#team-members a"), // Click the link
     ]);
