@@ -110,11 +110,12 @@ test.describe("Landing Page Tests", () => {
     const memberLink = await page.getAttribute("#team-members a", "href");
     expect(memberLink).toBe("https://www.activate.org/terra-watts");
 
-    // Handle the link opening in a new tab
+    // Prepare to handle the new tab
     const [newPage] = await Promise.all([
-      // wait for the click and the new tab opening concurrently.
-      context.waitForEvent("page"), // Wait for the new tab to open
-      page.click("#team-members a"), // Click the link
+      // Waits for a new tab (page) to open in the browser context. This is necessary because clicking the link initiates the tab opening asynchronously.
+      context.waitForEvent("page"),
+      // Clicks the link that is expected to open a new tab. The Promise.all ensures the click action and the wait for the new tab happen simultaneously.
+      page.click("#team-members a"),
     ]);
 
     // Wait for the new page to fully load
