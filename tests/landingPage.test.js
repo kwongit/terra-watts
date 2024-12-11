@@ -132,9 +132,15 @@ test.describe("Landing Page Tests", () => {
     const partnershipsHeading = await page.textContent("#partnerships h2");
     expect(partnershipsHeading).toBe("Partnerships");
 
+    // Select all elements with the class "partnership-logo" and extract the 'alt' attributes.
+    // `page.$$eval()` runs a function within the browser context for all matching elements.
+    // `logos` represents the NodeList of elements with the class "partnership-logo".
+    // `logos.map((logo) => logo.alt)` creates an array of 'alt' text from each logo.
     const partnershipLogos = await page.$$eval(".partnership-logo", (logos) =>
       logos.map((logo) => logo.alt)
     );
+
+    // Verify that the extracted 'alt' attributes contain the expected "Activate Logo".
     expect(partnershipLogos).toContain("Activate Logo");
   });
 
