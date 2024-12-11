@@ -87,7 +87,6 @@ test.describe("Landing Page Tests", () => {
     expect(spotlightContent).toEqual(expectedSpotlightContent);
   });
 
-  // TODO: next tests to add
   // 4. Meet the Team Section
   test("Check team section displays CEO information and link works", async ({
     page,
@@ -125,7 +124,19 @@ test.describe("Landing Page Tests", () => {
     expect(newPage.url()).toBe("https://www.activate.org/terra-watts");
   });
 
-  // 5. Partnerships Section: Check that the partnerships section displays the correct logo.
+  // 5. Partnerships Section
+  test("Check partnerships section displays the correct logo", async ({
+    page,
+  }) => {
+    // Verify the heading of the partnerships section
+    const partnershipsHeading = await page.textContent("#partnerships h2");
+    expect(partnershipsHeading).toBe("Partnerships");
+
+    const partnershipLogos = await page.$$eval(".partnership-logo", (logos) =>
+      logos.map((logo) => logo.alt)
+    );
+    expect(partnershipLogos).toContain("Activate Logo");
+  });
 
   // 6. Social Media Links: Validate that social media links are present and direct to the correct URLs.
 
