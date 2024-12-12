@@ -172,5 +172,18 @@ test.describe("Landing Page Tests", () => {
     expect(emailLink).toBe("mailto:kaitlyn@terra-watts.com?subject=Hello");
   });
 
-  // 7. Images Visibility: Check that important images are visible on the page.
+  // 7. Images Visibility
+  test("Check important images are visible", async ({ page }) => {
+    // Verify the visibility of the world image
+    const isWorldImageVisible = await page.isVisible("#top-image");
+    expect(isWorldImageVisible).toBe(true);
+
+    // Verify the visibility of the banner image
+    const isBannerImageVisible = await page.isVisible("#banner-image");
+    expect(isBannerImageVisible).toBe(true);
+
+    // Verify the visibility of the ceo image
+    const isCeoImageVisible = await page.isVisible('img[alt="Kaitlyn Suarez"]');
+    expect(isCeoImageVisible).toBe(true);
+  });
 });
