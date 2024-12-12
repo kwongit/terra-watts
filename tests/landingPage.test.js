@@ -144,7 +144,33 @@ test.describe("Landing Page Tests", () => {
     expect(partnershipLogos).toContain("Activate Logo");
   });
 
-  // 6. Social Media Links: Validate that social media links are present and direct to the correct URLs.
+  // 6. Social Media Links
+  test("Check social media links are present and direct to the correct URLs", async ({
+    page,
+  }) => {
+    // Verify the heading of the contact section
+    const contactHeading = await page.textContent("#contact");
+    expect(contactHeading).toBe("Get in touch");
+
+    // Verify the 'href' attribute matches expected URL
+    const twitterLink = await page.getAttribute(
+      'a[href="https://twitter.com/TerraWattsInc"]',
+      "href"
+    );
+    expect(twitterLink).toBe("https://twitter.com/TerraWattsInc");
+
+    const linkedinLink = await page.getAttribute(
+      'a[href="https://www.linkedin.com/company/terra-watts/"]',
+      "href"
+    );
+    expect(linkedinLink).toBe("https://www.linkedin.com/company/terra-watts/");
+
+    const emailLink = await page.getAttribute(
+      'a[href="mailto:kaitlyn@terra-watts.com?subject=Hello"]',
+      "href"
+    );
+    expect(emailLink).toBe("mailto:kaitlyn@terra-watts.com?subject=Hello");
+  });
 
   // 7. Images Visibility: Check that important images are visible on the page.
 });
