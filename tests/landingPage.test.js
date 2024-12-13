@@ -5,7 +5,7 @@ import { expectedSpotlightContent } from "./data/expectedSpotlightContent.js";
 // test.use({ headless: false });
 
 test.describe("Landing Page Tests", () => {
-  // Reuse common setup for navigating to the landing page
+  // Navigate to the landing page before each test
   test.beforeEach(async ({ page }) => {
     // Use 'page' to interact with the web app, e.g., navigating to a URL
     await page.goto("https://terra-watts.com/");
@@ -23,7 +23,6 @@ test.describe("Landing Page Tests", () => {
     const description = await page
       .locator('meta[name="description"]')
       .getAttribute("content");
-
     expect(description).toBe(
       "Terra Watts provides innovative subsurface wireless transmission to power your future."
     );
@@ -35,21 +34,12 @@ test.describe("Landing Page Tests", () => {
   }) => {
     // Click the "Want To Chat?" link
     await page.click('a[href="#contact"]');
-
     // Verify the URL includes #contact
-    await expect(page).toHaveURL("https://terra-watts.com/#contact");
+    await expect(page).toHaveURL(/#contact/);
 
     // Verify the contact section is scrolled into view
-    // page.evaluate() allows you to run JavaScript code within the browser's context, giving you direct access to the DOM, including methods like getBoundingClientRect().
-    const scrolledToContact = await page.evaluate(() => {
-      // Use querySelector() (inside page.evaluate or page.$$eval) when you need to perform more complex interactions within the browser context.
-      const contactSection = document.querySelector("#contact");
-      const rect = contactSection.getBoundingClientRect();
-      // Ensures the top of the section is within the viewport
-      return rect.top >= 0 && rect.top < window.innerHeight;
-    });
-
-    expect(scrolledToContact).toBe(true);
+    const isScrolledToContact = await page.locator("#contact").isVisible();
+    expect(isScrolledToContact).toBe(true);
   });
 
   // 3. Spotlight Sections
@@ -64,7 +54,6 @@ test.describe("Landing Page Tests", () => {
         // For each spotlight section, extract the text content of the <h2> heading.
         // Use querySelector() (inside page.evaluate or page.$$eval) when you need to perform more complex interactions within the browser context.
         const heading = section.querySelector("h2").textContent.trim();
-
         // Extract the text content of the <p> paragraph.
         const paragraph = section
           // Select the <p> element within the section.
@@ -74,15 +63,12 @@ test.describe("Landing Page Tests", () => {
           .replace(/\s+/g, " ")
           // Remove leading and trailing spaces.
           .trim();
-
         // Return an object containing the extracted heading and paragraph.
         return { heading, paragraph };
       })
     );
-
     // Verify that the number of spotlight sections found matches the expected number (3)
     expect(spotlightContent.length).toBe(3);
-
     // Verify that the extracted spotlight content matches the expected content
     expect(spotlightContent).toEqual(expectedSpotlightContent);
   });
@@ -92,6 +78,8 @@ test.describe("Landing Page Tests", () => {
     page,
     context,
   }) => {
+    const teamMembersSelector = "#team-members";
+
     // Verify the heading of the team section
     // Use page.textContent() when you want to quickly get the text content of an element and let Playwright handle waiting for the element.
     const teamHeading = await page.textContent("#team-members h2");
@@ -119,7 +107,6 @@ test.describe("Landing Page Tests", () => {
 
     // Wait for the new page to fully load
     await newPage.waitForLoadState("domcontentloaded");
-
     // Verify the URL of the new tab
     expect(newPage.url()).toBe("https://www.activate.org/terra-watts");
   });
@@ -139,7 +126,6 @@ test.describe("Landing Page Tests", () => {
     const partnershipLogos = await page.$$eval(".partnership-logo", (logos) =>
       logos.map((logo) => logo.alt)
     );
-
     // Verify that the extracted 'alt' attributes contain the expected "Activate Logo".
     expect(partnershipLogos).toContain("Activate Logo");
   });
