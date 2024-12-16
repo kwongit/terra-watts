@@ -154,9 +154,6 @@ test.describe("Landing Page Tests", () => {
       // Wait for the new page to fully load
       await newPage.waitForLoadState("domcontentloaded");
       expect(newPage.url()).toBe(expectedUrl);
-
-      // Close the new tab to return to the original page
-      await newPage.close();
     };
 
     // Verify Twitter link
@@ -178,4 +175,7 @@ test.describe("Landing Page Tests", () => {
     await expect(page.locator(selectors.bannerImage)).toBeVisible();
     await expect(page.locator(selectors.ceoImage)).toBeVisible();
   });
+
+  // TODO: Add more tests as needed
+  // performance, accessibility, responsive design, etc.
 });
