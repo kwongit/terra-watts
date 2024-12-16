@@ -74,12 +74,10 @@ test.describe("Landing Page Tests", () => {
           return { heading, paragraph };
         })
     );
-
     expect(spotlightContent.length).toBe(3);
     expect(spotlightContent).toEqual(expectedSpotlightContent);
   });
 
-  // TODO:
   // 4. Meet the Team Section
   test("Check team section displays CEO information and link works", async ({
     page,
@@ -92,11 +90,10 @@ test.describe("Landing Page Tests", () => {
       "Co-Founder & CEO"
     );
     await expect(page.locator(selectors.teamName)).toHaveText("Kaitlyn Suarez");
-
-    const linkHref = await page
-      .locator(selectors.teamLink)
-      .getAttribute("href");
-    expect(linkHref).toBe("https://www.activate.org/terra-watts");
+    await expect(page.locator(selectors.teamLink)).toHaveAttribute(
+      "href",
+      "https://www.activate.org/terra-watts"
+    );
 
     // Prepare to handle the new tab
     const [newPage] = await Promise.all([
@@ -119,7 +116,7 @@ test.describe("Landing Page Tests", () => {
       "Partnerships"
     );
 
-    // What is this code doing?
+    // Extract alt Attributes from All Logos.
     const logoAlts = await page.$$eval(selectors.partnershipLogos, (logos) =>
       logos.map((logo) => logo.alt)
     );
@@ -129,22 +126,50 @@ test.describe("Landing Page Tests", () => {
   // 6. Social Media Links
   test("Check social media links are present and direct to the correct URLs", async ({
     page,
+    context,
   }) => {
     await expect(page.locator(selectors.contactSection)).toContainText(
       "Get in touch"
     );
+    await expect(page.locator(selectors.twitterLink)).toHaveAttribute(
+      "href",
+      "https://twitter.com/TerraWattsInc"
+    );
+    await expect(page.locator(selectors.linkedinLink)).toHaveAttribute(
+      "href",
+      "https://www.linkedin.com/company/terra-watts/"
+    );
+    await expect(page.locator(selectors.emailLink)).toHaveAttribute(
+      "href",
+      "mailto:kaitlyn@terra-watts.com?subject=Hello"
+    );
 
-    const links = await Promise.all([
-      page.getAttribute(selectors.twitterLink, "href"),
-      page.getAttribute(selectors.linkedinLink, "href"),
-      page.getAttribute(selectors.emailLink, "href"),
-    ]);
+    // Function to handle new tab opening and URL verification
+    const verifyLinkOpensNewTab = async (linkSelector, expectedUrl) => {
+      const [newPage] = await Promise.all([
+        context.waitForEvent("page"),
+        page.click(linkSelector),
+      ]);
 
-    expect(links).toEqual([
-      "https://twitter.com/TerraWattsInc",
-      "https://www.linkedin.com/company/terra-watts/",
-      "mailto:kaitlyn@terra-watts.com?subject=Hello",
-    ]);
+      // Wait for the new page to fully load
+      await newPage.waitForLoadState("domcontentloaded");
+      expect(newPage.url()).toBe(expectedUrl);
+
+      // Close the new tab to return to the original page
+      await newPage.close();
+    };
+
+    // Verify Twitter link
+    await verifyLinkOpensNewTab(
+      selectors.twitterLink,
+      "https://x.com/TerraWattsInc?mx=2"
+    );
+
+    // Verify LinkedIn link
+    await verifyLinkOpensNewTab(
+      selectors.linkedinLink,
+      "https://www.linkedin.com/company/terra-watts/"
+    );
   });
 
   // 7. Images Visibility
