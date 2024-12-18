@@ -178,4 +178,9 @@ test.describe("Landing Page Tests", () => {
 
   // TODO: Add more tests as needed
   // performance, accessibility, responsive design, etc.
+  test("Page loads within acceptable time", async ({ page }) => {
+    const response = await page.goto("https://terra-watts.com/");
+    expect(response?.status()).toBe(200);
+    // expect(response?.timing()?.responseEnd).toBeLessThan(3000); // Adjust the threshold as needed
+  });
 });
