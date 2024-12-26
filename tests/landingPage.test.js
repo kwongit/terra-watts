@@ -178,7 +178,7 @@ test.describe("Landing Page Tests", () => {
 
   // TODO: Add more tests as needed
   // performance, accessibility, responsive design, etc.
-  test("Page returns status 200", async ({ page }) => {
+  test("Page returns status code 200", async ({ page }) => {
     const response = await page.goto("https://terra-watts.com/");
     expect(response?.status()).toBe(200);
   });
