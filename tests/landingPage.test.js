@@ -21,7 +21,9 @@ const selectors = {
   emailLink: 'a[href="mailto:kaitlyn@terra-watts.com?subject=Hello"]',
   worldImage: "#top-image",
   bannerImage: "#banner-image",
-  ceoImage: 'img[alt="Kaitlyn Suarez"]',
+  // ceoImage: 'img[alt="Kaitlyn Suarez"]',
+  ceoImage: 'img[alt="Co-Founder & CEO"]', // Being overriden by Contentful CMS
+  // ceoImage: 'img[src*="li-profile-pic.jpg"]', // Alternative to use src attribute
 };
 
 test.describe("Landing Page Tests", () => {
@@ -173,6 +175,7 @@ test.describe("Landing Page Tests", () => {
   test("Check important images are visible", async ({ page }) => {
     await expect(page.locator(selectors.worldImage)).toBeVisible();
     await expect(page.locator(selectors.bannerImage)).toBeVisible();
+    // console.log(await page.locator(selectors.ceoImage).getAttribute("alt")); // Debugging
     await expect(page.locator(selectors.ceoImage)).toBeVisible();
   });
 
