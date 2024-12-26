@@ -21,8 +21,7 @@ const selectors = {
   emailLink: 'a[href="mailto:kaitlyn@terra-watts.com?subject=Hello"]',
   worldImage: "#top-image",
   bannerImage: "#banner-image",
-  ceoImage: 'img[alt="Co-Founder & CEO"]', // Being overriden by Contentful CMS
-  // ceoImage: 'img[src*="li-profile-pic.jpg"]', // Alternative to use src attribute
+  ceoImage: 'img[src*="li-profile-pic.jpg"]',
 };
 
 test.describe("Landing Page Tests", () => {
