@@ -8,7 +8,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 * * * *" # Run every hour
+    - cron: "0 14,2 * * *" # Runs at 14:00 UTC (6 AM PST) and 02:00 UTC (6 PM PST)
 
 jobs:
   test:
