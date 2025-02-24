@@ -16,7 +16,7 @@ const selectors = {
   teamLink: "#team-members a",
   partnershipsHeading: "#partnerships h2",
   partnershipLogos: ".partnership-logo",
-  twitterLink: 'a[href="https://twitter.com/TerraWattsInc"]',
+  twitterLink: 'a[href="https://twitter.com/TerraWattsInc"]', // May need to update to x.com
   linkedinLink: 'a[href="https://www.linkedin.com/company/terra-watts/"]',
   emailLink: 'a[href="mailto:kaitlyn@terra-watts.com?subject=Hello"]',
   worldImage: "#top-image",
