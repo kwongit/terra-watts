@@ -154,7 +154,7 @@ test.describe("Landing Page Tests", () => {
     // Verify Twitter link
     await verifyLinkOpensNewTab(
       selectors.twitterLink,
-      "https://x.com/TerraWattsInc?mx=2"
+      "https://x.com/TerraWattsInc"
     );
 
     // Verify LinkedIn link
