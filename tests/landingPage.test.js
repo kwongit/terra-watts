@@ -154,6 +154,7 @@ test.describe("Landing Page Tests", () => {
     // Verify Twitter link
     await verifyLinkOpensNewTab(
       selectors.twitterLink,
+      // Updated URL to match the current Twitter link
       "https://x.com/TerraWattsInc"
     );
 
