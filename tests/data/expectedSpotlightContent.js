@@ -3,7 +3,7 @@ export const expectedSpotlightContent = [
   {
     heading: "Critical Need",
     paragraph:
-      "The demand for minerals vital to energy technologies is projected to surge by 500 percent by 2050, posing a significant challenge to combating climate change and ensuring national security. Geoscientists have expressed concerns about the limited resources available to meet the demand. It is therefore crucial to develop innovative approaches for the transition toward clean energy. One potential solution is to reduce our dependence on minerals by developing wireless methods to transmit power and electrify devices.",
+      "The demand for minerals vital to energy technologies is projected to surge by 500 percent by 2050, posing a significant challenge to electrification and ensuring national security. Geoscientists have expressed concerns about the limited resources available to meet the demand. It is therefore crucial to develop innovative approaches for transmitting power. One potential solution is to reduce our dependence on minerals by developing wireless methods to transmit power and electrify devices.",
   },
   {
     heading: "Technology Vision",
@@ -13,6 +13,6 @@ export const expectedSpotlightContent = [
   {
     heading: "Potential For Impact",
     paragraph:
-      "Terra Watt’s innovation in wireless power transmission has versatile applications across many industries. The near-term application will significantly impact farming by wirelessly powering and transmitting data to underground soil sensors. The long-term goal is to deliver power to larger electronic devices and buildings in agriculture and other industries. Moreover, advancements in wireless power transmission can increase the range of the energy grid by eliminating the need for wires, aiding in the challenges of delivering power to the last mile. The potential of wireless power transmission is enormous, and its development is crucial for a sustainable future.",
+      "Terra Watt’s innovation in wireless power transmission has versatile applications across many industries. The near-term application will significantly impact farming by wirelessly powering and transmitting data to underground soil sensors. The long-term goal is to deliver power to larger electronic devices and buildings in agriculture and other industries. Moreover, advancements in wireless power transmission can increase the range of the energy grid by eliminating the need for wires, aiding in the challenges of delivering power to the last mile. The potential of wireless power transmission is enormous, and its development is crucial for an electric future.",
   },
 ];
