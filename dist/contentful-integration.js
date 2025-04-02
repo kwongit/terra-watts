@@ -67,11 +67,18 @@ document.addEventListener("DOMContentLoaded", function () {
             partnershipsSection.innerHTML = ""; // Clear existing content
             partnerships.forEach(function (partnership) {
                 var section = document.createElement("section");
+                
+                var link = document.createElement("a"); // Create anchor tag
+                link.href = partnership.websiteUrl || "#"; // Use the website URL, fallback to "#"
+                link.target = "_blank"; // Open in new tab                
+                
                 var img = document.createElement("img");
                 img.classList.add("partnership-logo");
                 img.src = partnership.logoUrl;
                 img.alt = "".concat(partnership.title, " Logo");
-                section.appendChild(img);
+                
+                link.appendChild(img); // Append image to anchor tag
+                section.appendChild(link); // Append anchor tag to section
                 partnershipsSection.appendChild(section);
             });
         }
@@ -137,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var partnerships = response.items.map(function (entry) { return ({
             title: entry.fields.title,
             logoUrl: entry.fields.logo.fields.file.url,
+            websiteUrl: entry.fields.websiteUrl || "#" // Ensure the website URL is retrieved
         }); });
         updatePartnerships(partnerships);
     })
