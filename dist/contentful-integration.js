@@ -59,30 +59,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     // Function to update partnerships
-    function updatePartnerships(partnerships) {
-        var partnershipsSection = document.querySelector("#partnerships .items");
-        if (partnershipsSection) {
-            // Reverse the array of items
-            partnerships.reverse();
-            partnershipsSection.innerHTML = ""; // Clear existing content
-            partnerships.forEach(function (partnership) {
-                var section = document.createElement("section");
+    // function updatePartnerships(partnerships) {
+    //     var partnershipsSection = document.querySelector("#partnerships .items");
+    //     if (partnershipsSection) {
+    //         // Reverse the array of items
+    //         partnerships.reverse();
+    //         partnershipsSection.innerHTML = ""; // Clear existing content
+    //         partnerships.forEach(function (partnership) {
+    //             var section = document.createElement("section");
                 
-                var link = document.createElement("a"); // Create anchor tag
-                link.href = partnership.websiteUrl || "#"; // Use the website URL, fallback to "#"
-                link.target = "_blank"; // Open in new tab                
+    //             var link = document.createElement("a"); // Create anchor tag
+    //             link.href = partnership.websiteUrl || "#"; // Use the website URL, fallback to "#"
+    //             link.target = "_blank"; // Open in new tab                
                 
-                var img = document.createElement("img");
-                img.classList.add("partnership-logo");
-                img.src = partnership.logoUrl;
-                img.alt = "".concat(partnership.title, " Logo");
+    //             var img = document.createElement("img");
+    //             img.classList.add("partnership-logo");
+    //             img.src = partnership.logoUrl;
+    //             img.alt = "".concat(partnership.title, " Logo");
                 
-                link.appendChild(img); // Append image to anchor tag
-                section.appendChild(link); // Append anchor tag to section
-                partnershipsSection.appendChild(section);
-            });
-        }
-    }
+    //             link.appendChild(img); // Append image to anchor tag
+    //             section.appendChild(link); // Append anchor tag to section
+    //             partnershipsSection.appendChild(section);
+    //         });
+    //     }
+    // }
     client
         .getEntries({
         content_type: "header",
@@ -136,17 +136,17 @@ document.addEventListener("DOMContentLoaded", function () {
     })
         .catch(function (err) { return console.error("Error fetching Contentful Team Member data:", err); });
     // Fetch and update partnerships
-    client
-        .getEntries({
-        content_type: "partnership",
-    })
-        .then(function (response) {
-        var partnerships = response.items.map(function (entry) { return ({
-            title: entry.fields.title,
-            logoUrl: entry.fields.logo.fields.file.url,
-            websiteUrl: entry.fields.websiteUrl || "#" // Ensure the website URL is retrieved
-        }); });
-        updatePartnerships(partnerships);
-    })
-        .catch(function (err) { return console.error("Error fetching Contentful Partnership data:", err); });
+    // client
+    //     .getEntries({
+    //     content_type: "partnership",
+    // })
+    //     .then(function (response) {
+    //     var partnerships = response.items.map(function (entry) { return ({
+    //         title: entry.fields.title,
+    //         logoUrl: entry.fields.logo.fields.file.url,
+    //         websiteUrl: entry.fields.websiteUrl || "#" // Ensure the website URL is retrieved
+    //     }); });
+    //     updatePartnerships(partnerships);
+    // })
+    //     .catch(function (err) { return console.error("Error fetching Contentful Partnership data:", err); });
 });
